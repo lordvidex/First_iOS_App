@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5nz-hf-2zo">
+                                <rect key="frame" x="63.5" y="298.5" width="287" height="32"/>
+                                <segments>
+                                    <segment title="Kilometers"/>
+                                    <segment title="Centimeters"/>
+                                    <segment title="Millimeters"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" name="AccentColor"/>
+                                <connections>
+                                    <action selector="updateUnit:" destination="BYZ-38-t0r" eventType="valueChanged" id="zDg-j6-347"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt; Click convert button to convert &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35j-j2-ocC">
+                                <rect key="frame" x="74.5" y="437.5" width="265" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1X-XS-ywy">
+                                <rect key="frame" x="179.5" y="391.5" width="55" height="30"/>
+                                <state key="normal" title="Convert"/>
+                                <connections>
+                                    <action selector="convertFromMeters:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bxe-LP-vlk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCT-AB-sx3">
+                                <rect key="frame" x="34" y="158.5" width="44" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="value in meters" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Amp-Ly-IXZ">
+                                <rect key="frame" x="34" y="187" width="263" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgk-6J-g8d">
+                                <rect key="frame" x="26" y="303" width="23" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5nz-hf-2zo" firstAttribute="leading" secondItem="Rgk-6J-g8d" secondAttribute="trailing" constant="14.5" id="4JR-6j-bfA"/>
+                            <constraint firstItem="35j-j2-ocC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CYP-Xe-7Ad"/>
+                            <constraint firstItem="w1X-XS-ywy" firstAttribute="top" secondItem="5nz-hf-2zo" secondAttribute="bottom" constant="62" id="E9P-nD-SZA"/>
+                            <constraint firstItem="35j-j2-ocC" firstAttribute="top" secondItem="w1X-XS-ywy" secondAttribute="bottom" constant="16" id="G43-CA-xSN"/>
+                            <constraint firstItem="5nz-hf-2zo" firstAttribute="top" secondItem="Amp-Ly-IXZ" secondAttribute="bottom" constant="77.5" id="XVn-64-aU8"/>
+                            <constraint firstItem="Amp-Ly-IXZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="byH-Ax-oqQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MCT-AB-sx3" secondAttribute="trailing" constant="336" id="hwP-pn-HFq"/>
+                            <constraint firstItem="w1X-XS-ywy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hwl-za-xhh"/>
+                            <constraint firstItem="5nz-hf-2zo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k3D-Ft-d7F"/>
+                            <constraint firstItem="Amp-Ly-IXZ" firstAttribute="top" secondItem="MCT-AB-sx3" secondAttribute="bottom" constant="8" symbolic="YES" id="lV7-kw-kIM"/>
+                            <constraint firstItem="35j-j2-ocC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nNb-aQ-RUw"/>
+                            <constraint firstItem="MCT-AB-sx3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="w4q-Ob-mvn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Amp-Ly-IXZ" secondAttribute="trailing" constant="117" id="wqb-Il-IjW"/>
+                            <constraint firstItem="Rgk-6J-g8d" firstAttribute="top" secondItem="Amp-Ly-IXZ" secondAttribute="bottom" constant="82" id="xyt-Fo-2xH"/>
+                            <constraint firstItem="Rgk-6J-g8d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="z5w-Ug-R6b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="answerLabel" destination="35j-j2-ocC" id="sqI-QO-Vde"/>
+                        <outlet property="conversionSegmentController" destination="5nz-hf-2zo" id="d2g-b2-dge"/>
+                        <outlet property="inputField" destination="Amp-Ly-IXZ" id="FCf-xa-ihQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
